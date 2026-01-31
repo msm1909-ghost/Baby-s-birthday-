@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Zawjati 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  min-height:100vh;
+  overflow-y:auto;
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(circle at top left,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1,#6a82fb);
+  background-size: 300% 300%;
+  animation: bgMove 15s ease infinite;
+  padding:40px 15px;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,0.15) 1px,transparent 1px);
+  background-size:40px 40px;
+  animation: sparkle 20s linear infinite;
+  z-index:-1;
+}
+
+@keyframes sparkle{
+  from{transform:translateY(0);}
+  to{transform:translateY(-200px);}
+}
+
+.card{
+  max-width:750px;
+  margin:auto;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(25px);
+  border-radius:30px;
+  padding:40px;
+  box-shadow:0 0 60px rgba(255,105,180,0.4);
+  text-align:center;
+}
+
+h1{
+  font-family:'Dancing Script',cursive;
+  font-size:44px;
+  margin-bottom:20px;
+  background:linear-gradient(45deg,#ff4e91,#ff85a2,#ffc3d9);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 15px rgba(255,105,180,0.6);
+}
+
+.glass-text{
+  font-size:17px;
+  line-height:2;
+  color:#4b1c2f;
+  text-shadow:0 0 8px rgba(255,182,193,0.8);
+}
+
+/* ===== PHOTO TIMELINE ===== */
+.timeline{
+  margin-top:50px;
+  display:flex;
+  flex-direction:column;
+  gap:35px;
+}
+
+.memory{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.memory img{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 0 25px rgba(255,105,180,0.5);
+}
+
+.memory p{
+  font-size:14px;
+  color:#5a1e36;
+  text-shadow:0 0 6px rgba(255,182,193,0.8);
+}
+
+.memory.left{justify-content:flex-start;}
+.memory.right{justify-content:flex-end; flex-direction:row-reverse;}
+
+/* Emoji hearts */
+.emoji{
+  position:fixed;
+  font-size:22px;
+  pointer-events:none;
+  animation: floatUp 2s linear forwards;
+}
+
+@keyframes floatUp{
+  0%{transform:translateY(0) scale(1);opacity:1;}
+  100%{transform:translateY(-150px) scale(1.6);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Happy Birthday mera bachcha 💖</h1>
+  <p class="glass-text">
+    My dearest zawjati, my sweetheart, my sunshine, my darling… loving you has changed my world in ways I never expected. Before you, days were just days, but now even ordinary moments feel special because you exist in my life. You are my calm, my comfort, my peace — the person my heart feels safe with without even trying.  
+
+    With you, I don’t have to pretend. I can be quiet, silly, tired, or happy, and you still stay. The way you talk, the way you care, the little things you do — you don’t even realize how deeply they touch my heart. Your presence heals moods you never even saw were broken.  
+
+    When I think of the future, I don’t think of big things first. I think of more days with you, more laughs, more talks, more birthdays celebrating the girl who makes life softer just by being here. I want to support your dreams, protect your heart, and see you smile in every chapter of life.  
+
+    You deserve a love that is gentle, loyal, patient, and real — and that’s exactly what I carry for you. On your birthday, I just want you to feel how valued you are, how deeply you matter, and how grateful I am that out of everyone in this world… it’s you. Always you. 💖
+  </p>
+
+  <!-- ===== PHOTOS ===== -->
+  <div class="timeline">
+    <div class="memory left">
+      <img src="pic1.jpg">
+      <p>Our favorite moment 💖</p>
+    </div>
+
+    <div class="memory right">
+      <img src="pic2.jpg">
+      <p>Your cutest smile 🌸</p>
+    </div>
+
+    <div class="memory left">
+      <img src="pic3.jpg">
+      <p>The day I felt lucky ✨</p>
+    </div>
+
+    <div class="memory right">
+      <img src="pic4.jpg">
+      <p>Memories I’ll always keep 💫</p>
+    </div>
+
+    <div class="memory left">
+      <img src="pic5.jpg">
+      <p>My comfort place 🤍</p>
+    </div>
+
+    <div class="memory right">
+      <img src="pic6.jpg">
+      <p>Forever my person 💞</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let isTouching = false;
+
+function createEmoji(x, y){
+  const emojis = ["💖","💘","💝","💕","💗","💓","💞","💟"];
+  const e = document.createElement("div");
+  e.className = "emoji";
+  e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.left = x + "px";
+  e.style.top = y + "px";
+  document.body.appendChild(e);
+  setTimeout(()=>e.remove(),2000);
+}
+
+document.addEventListener("touchstart", ()=>{isTouching = true;});
+document.addEventListener("touchmove", (e)=>{
+  if(!isTouching) return;
+  const t = e.touches[0];
+  createEmoji(t.clientX, t.clientY);
+});
+document.addEventListener("touchend", ()=>{isTouching = false;});
+document.addEventListener("touchcancel", ()=>{isTouching = false;});
+</script>
+
+</body>
+</html>
